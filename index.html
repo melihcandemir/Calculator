@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hesap Makinesi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./javascript.png" type="image/x-icon" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#f0f9ff",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="h-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 transition-all duration-300"
+  >
+    <div class="min-h-full flex items-center justify-center p-4">
+      <div class="w-full max-w-sm">
+        <!-- Başlık ve Theme Toggle -->
+        <div class="flex items-center justify-between mb-6">
+          <h1 class="text-2xl font-bold text-gray-800 dark:text-white">
+            Hesap Makinesi
+          </h1>
+          <button
+            id="themeToggle"
+            class="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-md hover:shadow-lg transition-all duration-200 text-gray-600 dark:text-gray-300"
+          >
+            <svg
+              id="sunIcon"
+              class="w-5 h-5 hidden dark:block"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg
+              id="moonIcon"
+              class="w-5 h-5 block dark:hidden"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Hesap Makinesi -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 transition-all duration-300"
+        >
+          <!-- Ekran -->
+          <div class="mb-6">
+            <div
+              class="bg-gray-50 dark:bg-gray-700 rounded-xl p-4 min-h-[80px] flex flex-col justify-end"
+            >
+              <div
+                id="previousOperation"
+                class="text-sm text-gray-500 dark:text-gray-400 h-5"
+              ></div>
+              <div
+                id="display"
+                class="text-right text-3xl font-mono font-bold text-gray-800 dark:text-white overflow-hidden"
+              >
+                0
+              </div>
+            </div>
+          </div>
+
+          <!-- Butonlar -->
+          <div class="grid grid-cols-4 gap-3">
+            <!-- İlk Satır -->
+            <button
+              class="col-span-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              Temizle
+            </button>
+            <button
+              class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              ⌫
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+            >
+              ÷
+            </button>
+
+            <!-- İkinci Satır -->
+            <button
+              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              7
+            </button>
+            <button
+              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              8
+            </button>
+            <button
+              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              9
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+            >
+              ×
+            </button>
+
+            <!-- Üçüncü Satır -->
+            <button
+              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              4
+            </button>
+            <button
+              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              5
+            </button>
+            <button
+              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              6
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+            >
+              −
+            </button>
+
+            <!-- Dördüncü Satır -->
+            <button
+              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              1
+            </button>
+            <button
+              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              2
+            </button>
+            <button
+              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              3
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+            >
+              +
+            </button>
+
+            <!-- Beşinci Satır -->
+            <button
+              class="col-span-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              0
+            </button>
+            <button
+              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+            >
+              .
+            </button>
+            <button
+              class="bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+            >
+              =
+            </button>
+          </div>
+        </div>
+
+        <!-- Alt Bilgi -->
+        <div class="text-center mt-4 text-sm text-gray-500 dark:text-gray-400">
+          Modern Hesap Makinesi © 2025
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
