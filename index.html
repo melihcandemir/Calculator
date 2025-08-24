@@ -86,103 +86,139 @@
           </div>
 
           <!-- Butonlar -->
-          <div class="grid grid-cols-4 gap-3">
+          <div id="calculaterButtons" class="grid grid-cols-4 gap-3">
             <!-- İlk Satır -->
             <button
-              class="col-span-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="clear"
+              class="clear-btn col-span-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
             >
               Temizle
             </button>
             <button
-              class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="backspace"
+              class="backspace-btn bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg flex items-center justify-center"
             >
-              ⌫
+              <svg
+                class="w-6 h-6 text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+
+              <!-- ⌫ -->
             </button>
             <button
-              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+              value="/"
+              class="operator-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
             >
               ÷
             </button>
 
             <!-- İkinci Satır -->
             <button
-              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="7"
+              class="number-btn bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
             >
               7
             </button>
             <button
-              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="8"
+              class="number-btn bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
             >
               8
             </button>
             <button
-              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="9"
+              class="number-btn bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
             >
               9
             </button>
             <button
-              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+              value="*"
+              class="operator-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
             >
               ×
             </button>
 
             <!-- Üçüncü Satır -->
             <button
-              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="4"
+              class="number-btn bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
             >
               4
             </button>
             <button
-              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="5"
+              class="number-btn bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
             >
               5
             </button>
             <button
-              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="6"
+              class="number-btn bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
             >
               6
             </button>
             <button
-              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+              value="-"
+              class="operator-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
             >
               −
             </button>
 
             <!-- Dördüncü Satır -->
             <button
-              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="1"
+              class="number-btn bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
             >
               1
             </button>
             <button
-              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="2"
+              class="number-btn bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
             >
               2
             </button>
             <button
-              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="3"
+              class="number-btn bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
             >
               3
             </button>
             <button
-              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+              value="+"
+              class="operator-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
             >
               +
             </button>
 
             <!-- Beşinci Satır -->
             <button
-              class="col-span-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
+              value="0"
+              class="number-btn col-span-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg"
             >
               0
             </button>
             <button
-              class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+              value="."
+              class="number-btn bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
             >
               .
             </button>
             <button
-              class="bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
+              value="="
+              class="equals-btn bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg text-xl"
             >
               =
             </button>
